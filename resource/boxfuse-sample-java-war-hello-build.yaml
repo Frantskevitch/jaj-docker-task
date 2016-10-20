@@ -1,0 +1,17 @@
+- job:
+    name: build-jaj-ops-sample-app
+    project-type: maven
+    scm:
+      - git:
+          url: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+          skip-tag: true
+          branches:
+            - '*/master'
+    maven:
+      root-pom: pom.xml
+      goals: package
+
+    postbuilders:
+      - shell: |
+          #!/bin/bash
+          cp -f $WORKSPACE/target/hello-1.0.war /usr/local/tomcat/webapps/boxfuse-sample-java-war-hello.war
