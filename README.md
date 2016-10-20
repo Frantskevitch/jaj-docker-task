@@ -4,5 +4,7 @@ Student: [Aleksandr Frantskevitch](https://upsa.epam.com/workload/employeeView.d
 
 
 to run use "docker-compose up"
+
 jenkins available here http://hostname:8080
+
 deployed application http://hostname:8081/boxfuse-sample-java-war-hello/
